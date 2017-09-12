@@ -17,52 +17,66 @@ $dbname = "c9";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Display table
-$query = "SELECT * FROM Items";
-$result = $conn->query($query);
+show();
 
-$rows = $result ->num_rows;
-
-echo "<table><tr> <th>Item ID</th> <th>Item Name</th>  <th>Price</th> <th>Date</th>";
-
-for ($j = 0; $j < $rows; ++$j)
-{
-    $result->data_seek($j);
-    $row =$result->fetch_array(MYSQLI_NUM);
-    
-    echo "<tr>";
-    for ($k = 0; $k < 4; ++$k) 
-    {   
-        echo "<td>$row[$k]</td>";
-    }
-    
-    echo "<tr>";
-
-}
-
-if (isset($_POST['name'])) $name = $_POST['name'];
-else $name = "(Not entered)";
-
+// Seaching
 echo <<<_END
-Your Name is: $name<br>
+Searching for : $date<br>
 <form method = "post" action = "Tracker.php">
-What is your name?
-    <input type = "text" name = "name">
+Enter the Date
+    <input type = "text" name = "date">
     <input type = "submit">
 </form>
+<br></br>
 _END;
 
-function add()
+
+// Display table
+function show()
 {
     global $conn;
-    $query = "INSERT INTO Items VALUES(3, 'Pizza', 5.75, '09/08/2017')";
+    $query = "SELECT * FROM Items";
+    $result = $conn->query($query);
+    
+    $rows = $result ->num_rows;
+    
+    echo "<table><tr> <th>Item ID</th> <th>Item Name</th>  <th>Price</th> <th>Date</th>";
+    
+    for ($j = 0; $j < $rows; ++$j)
+    {
+        $result->data_seek($j);
+        $row =$result->fetch_array(MYSQLI_NUM);
+        
+        echo "<tr>";
+        for ($k = 0; $k < 4; ++$k) 
+        {   
+            echo "<td>$row[$k]</td>";
+        }
+        
+        echo "<tr>";
+    
+    }
+    
+    if (isset($_POST['date'])) {
+        $date = $_POST['date'];
+        search($date);
+    }
+    else {
+        $item = "(Not Found)";
+    }
+}
+
+function add($ItemId, $ItemName, $Price, $Date)
+{
+    global $conn;
+    $query = "INSERT INTO Items VALUES($ItemId, $ItemName, $Price, $Date)";
     $result = $conn->query($query);
 }
 
 function edit()
 {
     global $conn;
-    $query = "UPDATE Items SET Date = '08/25/2107' WHERE Item_Name = 'Pencil'";
+    $query = "UPDATE Items SET Date = '08/25/2017' WHERE Item_Name = 'Pencil'";
     $result = $conn->query($query);
 }
 
@@ -72,6 +86,32 @@ function delete()
     $query = "DELETE FROM Items WHERE Item_Name = 'Notebook'";
     $result = $conn->query($query);
 }
+
+function search($date)
+{
+    global $conn;
+    $query = "SELECT * FROM Items WHERE Date = '$date'";
+    $result = $conn->query($query);
+    
+    $rows = $result ->num_rows;
+    
+    echo "<table><tr> <th>Item ID</th> <th>Item Name</th>  <th>Price</th> <th>Date</th>";
+    
+    for ($j = 0; $j < $rows; ++$j)
+    {
+        $result->data_seek($j);
+        $row =$result->fetch_array(MYSQLI_NUM);
+        
+        echo "<tr>";
+        for ($k = 0; $k < 4; ++$k) 
+        {   
+            echo "<td>$row[$k]</td>";
+        }
+        
+        echo "<tr>";
+    }
+}
+
 
 //add();
 //edit();
