@@ -7,19 +7,10 @@
 
 <h1>Weclome to your Item List</h1>
 
-<?php include("Tracker.php"); ?>
+<?php include("action.php"); ?>
 <?php
-// Connect to Database
-$servername = "localhost";
-$username = "ysongh";
-$password = "";
-$dbname = "c9";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 $action = new action();
-
 $action->show();
 
 if (isset($_POST['date'])) 
@@ -31,7 +22,6 @@ else
 {
     $item = "(Not Found)";
 }
-
 // Seaching
 echo <<<_END
 Searching for : $date<br>
@@ -43,9 +33,10 @@ Enter the Date
 <br></br>
 _END;
 
-mysqli_close($conn);
-
 ?>
+
+<a href="add.php">Add Items</a></br>
+<a href="remove.php">Remove Items</a><br></br>
 
 </body>
 

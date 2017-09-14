@@ -1,4 +1,12 @@
 <?php
+// Connect to Database
+$servername = "localhost";
+$username = "ysongh";
+$password = "";
+$dbname = "c9";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
 class action
 {
     // Display table
@@ -29,10 +37,10 @@ class action
         
     }
     
-    function add($ItemId, $ItemName, $Price, $Date)
+    function add($itemId, $itemName, $price, $date)
     {
         global $conn;
-        $query = "INSERT INTO Items VALUES($ItemId, $ItemName, $Price, $Date)";
+        $query = "INSERT INTO Items VALUES('$itemId', '$itemName', '$price', '$date')";
         $result = $conn->query($query);
     }
     
@@ -43,10 +51,10 @@ class action
         $result = $conn->query($query);
     }
     
-    function delete()
+    function delete($itemName)
     {
         global $conn;
-        $query = "DELETE FROM Items WHERE Item_Name = 'Notebook'";
+        $query = "DELETE FROM Items WHERE Item_Name = '$itemName'";
         $result = $conn->query($query);
     }
     
@@ -74,11 +82,9 @@ class action
             echo "<tr>";
         }
     }
-
-
-//add();
 //edit();
 //delete();
 }
+//mysqli_close($conn);
 
 ?> 
