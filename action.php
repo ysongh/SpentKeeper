@@ -82,6 +82,23 @@ class action
             echo "<tr>";
         }
     }
+    
+    function login($username, $password)
+    {
+        global $conn;
+        $query = "SELECT * FROM users WHERE username = '$username' and password = '$password'";
+        $result = $conn->query($query);
+        
+        if ($result->num_rows > 0)
+        {
+            echo "right";
+            header("Location: home.php");
+        }
+        else 
+        {
+            echo "Invaild Username or Password";
+        }
+    }
 //edit();
 //delete();
 }

@@ -36,7 +36,8 @@ _END;
 ?>
 
 <a href="add.php">Add Items</a></br>
-<a href="remove.php">Remove Items</a><br></br>
+<a href="remove.php">Remove Items</a></br>
+<a href="login.php">Log Out</a><br></br>
 
 </body>
 
