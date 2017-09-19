@@ -10,6 +10,8 @@
 <?php include("action.php"); ?>
 <?php
 
+session_start();
+
 $action = new action();
 $action->show();
 
@@ -32,6 +34,8 @@ Enter the Date
 </form>
 <br></br>
 _END;
+
+echo "Log in as : " . $_SESSION['username'] . "<br></br>";
 
 ?>
 

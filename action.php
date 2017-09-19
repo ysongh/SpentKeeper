@@ -91,7 +91,6 @@ class action
         
         if ($result->num_rows > 0)
         {
-            echo "right";
             header("Location: home.php");
         }
         else 
@@ -99,8 +98,16 @@ class action
             echo "Invaild Username or Password";
         }
     }
+    
+    function signup($username, $password)
+    {
+        global $conn;
+        $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+        echo $username . $password;
+        $result = $conn->query($query);
+        header("Location: home.php");
+    }
 //edit();
-//delete();
 }
 //mysqli_close($conn);
 
