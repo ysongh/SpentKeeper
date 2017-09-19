@@ -11,9 +11,10 @@
 <?php
 
 session_start();
+$currentUser = $_SESSION['username'];
 
 $action = new action();
-$action->show();
+$action->show($currentUser);
 
 if (isset($_POST['date'])) 
 {
@@ -35,7 +36,7 @@ Enter the Date
 <br></br>
 _END;
 
-echo "Log in as : " . $_SESSION['username'] . "<br></br>";
+echo "Log in as : " . $currentUser . "<br></br>";
 
 ?>
 

@@ -10,10 +10,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 class action
 {
     // Display table
-    function show()
+    function show($currentUser)
     {
         global $conn;
-        $query = "SELECT * FROM Items";
+        $query = "SELECT id, name, price, date FROM purchases WHERE username = '$currentUser'";
         $result = $conn->query($query);
         
         $rows = $result ->num_rows;
@@ -37,10 +37,10 @@ class action
         
     }
     
-    function add($itemId, $itemName, $price, $date)
+    function add($itemName, $price, $currentUser)
     {
         global $conn;
-        $query = "INSERT INTO Items VALUES('$itemId', '$itemName', '$price', '$date')";
+        $query = "INSERT INTO purchases (name, price, date, username) VALUES('$itemName', '$price', now(), '$currentUser')";
         $result = $conn->query($query);
     }
     
@@ -51,10 +51,10 @@ class action
         $result = $conn->query($query);
     }
     
-    function delete($itemName)
+    function delete($itemName, $currentUser)
     {
         global $conn;
-        $query = "DELETE FROM Items WHERE Item_Name = '$itemName'";
+        $query = "DELETE FROM purchases WHERE name = '$itemName' AND username = '$currentUser'";
         $result = $conn->query($query);
     }
     

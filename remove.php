@@ -10,13 +10,16 @@
 <?php include("action.php"); ?>
 <?php
 
+session_start();
+$currentUser = $_SESSION['username'];
+
 $action = new action();
-$action->show();
+$action->show($currentUser);
 
 if (isset($_POST['itemName'])) 
 {
     $itemName = $_POST['itemName'];
-    $action->delete($itemName);
+    $action->delete($itemName, $currentUser);
     echo "Success</br>";
 }
 else 

@@ -10,19 +10,17 @@
 <?php include("action.php"); ?>
 <?php
 
-$action = new action();
-$action->show();
+session_start();
+$currentUser = $_SESSION['username'];
 
-if  (isset($_POST['itemID']) &&
-    isset($_POST['itemName']) &&
-    isset($_POST['price']) &&
-    isset($_POST['date'])) 
+$action = new action();
+
+if  (isset($_POST['itemName']) &&
+    isset($_POST['price'])) 
 {
-    $itemID = $_POST['itemID'];
     $itemName= $_POST['itemName'];
     $price= $_POST['price'];
-    $date= $_POST['date'];
-    $action->add($itemID, $itemName, $price, $date);
+    $action->add($itemName, $price, $currentUser);
     echo "Success</br>";
 }
 else 
@@ -34,14 +32,10 @@ else
 echo <<<_END
 Enter the item information<br>
 <form method = "post" action = "add.php">
-Item ID
-    <input type = "text" name = "itemID">
 Item Name
     <input type = "text" name = "itemName">
 Price
     <input type = "text" name = "price">
-Date
-    <input type = "text" name = "date">
     <input type = "submit">
 </form>
 <br></br>
