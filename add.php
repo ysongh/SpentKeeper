@@ -1,18 +1,27 @@
+<?php 
+include("action.php");
+session_start();
+$currentUser = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
 <h1>Adding Items</h1>
 
-<?php include("action.php"); ?>
+<form method = "post" action = "add.php">
+    Item Name: <input type = "text" name = "itemName">
+    Price: <input type = "text" name = "price"><br>
+    <input type = "submit" value = "Add">
+</form>
+<br></br>
+
 <?php
-
-session_start();
-$currentUser = $_SESSION['username'];
-
 $action = new action();
 
 if  (isset($_POST['itemName']) &&
@@ -27,20 +36,6 @@ else
 {
     $item = "(Not Found)";
 }
-
-// Seaching
-echo <<<_END
-Enter the item information<br>
-<form method = "post" action = "add.php">
-Item Name
-    <input type = "text" name = "itemName">
-Price
-    <input type = "text" name = "price">
-    <input type = "submit">
-</form>
-<br></br>
-_END;
-
 ?>
 
 <a href="home.php">Home</a></br>

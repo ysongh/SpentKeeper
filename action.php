@@ -61,7 +61,7 @@ class action
     function search($date)
     {
         global $conn;
-        $query = "SELECT * FROM Items WHERE Date = '$date'";
+        $query = "SELECT * FROM purchases WHERE Date LIKE '$date%'";
         $result = $conn->query($query);
         
         $rows = $result ->num_rows;

@@ -1,18 +1,27 @@
+<?php 
+include("action.php");
+session_start();
+$currentUser = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
 <h1>Remove Item</h1>
 
-<?php include("action.php"); ?>
+<form method = "post" action = "remove.php">
+Enter the name of the item to remove<br>
+    <input type = "text" name = "itemName"><br>
+    <input type = "submit" value = "Remove">
+</form>
+<br></br>
+
 <?php
-
-session_start();
-$currentUser = $_SESSION['username'];
-
 $action = new action();
 $action->show($currentUser);
 
@@ -26,17 +35,6 @@ else
 {
     $itemName = "(Not Found)";
 }
-// Seaching
-echo <<<_END
-Removeing : $itemName<br>
-<form method = "post" action = "remove.php">
-Enter the name of the item to remove
-    <input type = "text" name = "itemName">
-    <input type = "submit">
-</form>
-<br></br>
-_END;
-
 ?>
 
 <a href="home.php">Home</a></br>

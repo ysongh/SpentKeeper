@@ -1,18 +1,26 @@
+<?php 
+include("action.php");
+session_start();
+$currentUser = $_SESSION['username'];
+?>
+ 
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
 <h1>Weclome to your Item List</h1>
 
-<?php include("action.php"); ?>
+<form method = "post" action = "home.php">
+    Enter the Date: <input type = "text" name = "date">
+    <input type = "submit" value="Enter">
+</form>
+<br></br>
+
 <?php
-
-session_start();
-$currentUser = $_SESSION['username'];
-
 $action = new action();
 $action->show($currentUser);
 
@@ -25,19 +33,8 @@ else
 {
     $item = "(Not Found)";
 }
-// Seaching
-echo <<<_END
-Searching for : $date<br>
-<form method = "post" action = "home.php">
-Enter the Date
-    <input type = "text" name = "date">
-    <input type = "submit">
-</form>
-<br></br>
-_END;
 
 echo "Log in as : " . $currentUser . "<br></br>";
-
 ?>
 
 <a href="add.php">Add Items</a></br>
@@ -45,7 +42,5 @@ echo "Log in as : " . $currentUser . "<br></br>";
 <a href="login.php">Log Out</a><br></br>
 
 </body>
-
-
 
 </html>

@@ -1,19 +1,27 @@
+<?php include("action.php"); 
+
+session_start();
+
+$action = new action();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <title>Page Title</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
 <h1>Sign Up</h1>
 
-<?php include("action.php"); ?>
+<form method = "post" action = "signup.php">
+    Username: <input type = "text" name = "username"><br>
+    Password: <input type = "text" name = "password"><br>
+    <input type = "submit" value="Enter">
+</form>
+
 <?php
-
-session_start();
-
-$action = new action();
-
 if (isset($_POST['username']) &&
     isset($_POST['password'])) 
 {
@@ -26,20 +34,9 @@ else
 {
     $item = "(Not Found)";
 }
-// Seaching
-echo <<<_END
-<form method = "post" action = "signup.php">
-Enter the Username
-    <input type = "text" name = "username">
-Enter the Password
-    <input type = "text" name = "password">
-    <input type = "submit">
-</form>
-<br></br>
-_END;
-
 ?>
 
+<br></br>
 <a href="login.php">Login</a><br></br>
 
 </body>
