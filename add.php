@@ -15,8 +15,8 @@ $currentUser = $_SESSION['username'];
 <h1>Adding Items</h1>
 
 <form method = "post" action = "add.php">
-    Item Name: <input type = "text" name = "itemName">
-    Price: <input type = "text" name = "price"><br>
+    Item Name: <input type = "text" name = "itemName" required>
+    Price: <input type = "text" name = "price" required><br>
     <input type = "submit" value = "Add">
 </form>
 <br></br>

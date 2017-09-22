@@ -16,7 +16,7 @@ $currentUser = $_SESSION['username'];
 
 <form method = "post" action = "remove.php">
 Enter the name of the item to remove<br>
-    <input type = "text" name = "itemName"><br>
+    <input type = "text" name = "itemName" required><br>
     <input type = "submit" value = "Remove">
 </form>
 <br></br>

@@ -15,11 +15,13 @@ $action = new action();
 
 <h1>Sign Up</h1>
 
-<form method = "post" action = "signup.php">
-    Username: <input type = "text" name = "username"><br>
-    Password: <input type = "text" name = "password"><br>
+<form name = "account" method = "post" action = "signup.php" onsubmit = "return check()">
+    Username: <input type = "text" name = "username" required><br>
+    Password: <input type = "text" name = "password" required><br>
     <input type = "submit" value="Enter">
 </form>
+
+<p id = "error"></p>
 
 <?php
 if (isset($_POST['username']) &&
@@ -39,8 +41,7 @@ else
 <br></br>
 <a href="login.php">Login</a><br></br>
 
+<script src = "validation.js"></script>
 </body>
-
-
 
 </html>

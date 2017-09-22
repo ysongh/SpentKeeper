@@ -15,7 +15,7 @@ $currentUser = $_SESSION['username'];
 <h1>Weclome to your Item List</h1>
 
 <form method = "post" action = "home.php">
-    Enter the Date: <input type = "text" name = "date">
+    Enter the Date: <input type = "text" name = "date" required>
     <input type = "submit" value="Enter">
 </form>
 <br></br>
@@ -27,7 +27,7 @@ $action->show($currentUser);
 if (isset($_POST['date'])) 
 {
     $date = $_POST['date'];
-    $action->search($date);
+    //$action->search($date);
 }
 else 
 {
@@ -42,5 +42,4 @@ echo "Log in as : " . $currentUser . "<br></br>";
 <a href="login.php">Log Out</a><br></br>
 
 </body>
-
 </html>
