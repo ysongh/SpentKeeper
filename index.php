@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>Weclome to Spent Tracker</h1>
+<h1>Weclome to Spent Keeper</h1>
 
 <img src = "/images/shop.png" >
 

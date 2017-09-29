@@ -1,5 +1,5 @@
-Spent Tracker
+Spent Keeper
 
 Keep track of what you spent.
 
-https://spent-tracker-ysongh.c9users.io/
+https://spent-keeper-ysongh.c9users.io/
