@@ -7,7 +7,7 @@ $currentUser = $_SESSION['username'];
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
+    <title>Remove Item</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -23,6 +23,7 @@ Enter the name of the item to remove<br>
 
 <?php
 $action = new action();
+$action->isUser($currentUser);
 $action->show($currentUser);
 
 if (isset($_POST['itemName'])) 
@@ -37,8 +38,8 @@ else
 }
 ?>
 
-<a href="home.php">Home</a></br>
-<a href="add.php">Add Items</a><br></br>
+<a href="home.php"><button type="button">Home</button></a></br>
+<a href="add.php"><button type="button">Add Items</button></a><br></br>
 
 </body>
 

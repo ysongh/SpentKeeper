@@ -7,7 +7,7 @@ $currentUser = $_SESSION['username'];
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
+    <title>Add Item</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -23,6 +23,7 @@ $currentUser = $_SESSION['username'];
 
 <?php
 $action = new action();
+$action->isUser($currentUser);
 
 if  (isset($_POST['itemName']) &&
     isset($_POST['price'])) 
@@ -38,8 +39,8 @@ else
 }
 ?>
 
-<a href="home.php">Home</a></br>
-<a href="remove.php">Remove Items</a><br></br>
+<a href="home.php"><button type="button">Home</button></a></br>
+<a href="remove.php"><button type="button">Remove Items</button></a><br></br>
 
 </body>
 

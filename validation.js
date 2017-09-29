@@ -1,7 +1,12 @@
 function check() {
-    var password = document.forms["account"]["password"].value;
-    if (password.length <= 6) {
+    var password1 = document.forms["account"]["password1"].value;
+    var password2 = document.forms["account"]["password2"].value;
+    if (password1.length <= 6) {
         document.getElementById("error").innerHTML = "Password must be at least 7 characters.";
+        return false;
+    }
+    else if (password1 != password2){
+        document.getElementById("error").innerHTML = "Passwords not matched";
         return false;
     }
 }

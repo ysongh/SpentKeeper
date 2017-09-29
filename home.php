@@ -7,7 +7,7 @@ $currentUser = $_SESSION['username'];
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
+    <title>Weclome</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -22,6 +22,7 @@ $currentUser = $_SESSION['username'];
 
 <?php
 $action = new action();
+$action->isUser($currentUser);
 $action->show($currentUser);
 
 if (isset($_POST['date'])) 
@@ -37,9 +38,9 @@ else
 echo "Log in as : " . $currentUser . "<br></br>";
 ?>
 
-<a href="add.php">Add Items</a></br>
-<a href="remove.php">Remove Items</a></br>
-<a href="login.php">Log Out</a><br></br>
+<a href="add.php"><button type="button">Add Items</button></a></br>
+<a href="remove.php"><button type="button">Remove Items</button></a></br>
+<a href="index.php"><button type="button">Log Out</button></a><br></br>
 
 </body>
 </html>

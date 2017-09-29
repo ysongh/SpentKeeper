@@ -8,7 +8,7 @@ $action = new action();
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>SignUp</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -17,7 +17,8 @@ $action = new action();
 
 <form name = "account" method = "post" action = "signup.php" onsubmit = "return check()">
     Username: <input type = "text" name = "username" required><br>
-    Password: <input type = "text" name = "password" required><br>
+    Password: <input type = "text" name = "password1" required><br>
+    Re-enter Password: <input type = "text" name = "password2" required><br>
     <input type = "submit" value="Enter">
 </form>
 
@@ -25,12 +26,14 @@ $action = new action();
 
 <?php
 if (isset($_POST['username']) &&
-    isset($_POST['password'])) 
+    isset($_POST['password1']) &&
+    isset($_POST['password2'])) 
 {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password1 = $_POST['password1'];
+    $password2 = $_POST['password2'];
     $_SESSION["username"] = $username;
-    $action->signup($username, $password);
+    $action->signup($username, $password1);
 }
 else 
 {
@@ -39,7 +42,7 @@ else
 ?>
 
 <br></br>
-<a href="login.php">Login</a><br></br>
+<a href="login.php"><button type="button">Login</a><br></button></br>
 
 <script src = "validation.js"></script>
 </body>

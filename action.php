@@ -113,6 +113,14 @@ class action
         $result = $conn->query($query);
         header("Location: home.php");
     }
+    
+    function isUser($currentUser)
+    {
+        if ($currentUser == ""){
+            header("Location: index.php");
+        }
+    }
+    
 //edit();
 }
 //mysqli_close($conn);

@@ -28,3 +28,13 @@ td, th {
 p{
     color: red;
 }
+img{
+    width: 200px;
+    height: 200px;
+}
+button{
+    width: 120px;
+    margin: 3px;
+    padding: 5px;
+    background-color: yellow;
+}
