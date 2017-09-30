@@ -14,7 +14,6 @@
 <a href="login.php"><button type="button">Log In</button></a><br>
 <a href="signup.php"><button type="button">Sign Up</button></a>
 
-<script src = "validation.js"></script>
 </body>
 
 </html>

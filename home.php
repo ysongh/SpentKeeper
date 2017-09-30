@@ -40,7 +40,7 @@ echo "Log in as : " . $currentUser . "<br></br>";
 
 <a href="add.php"><button type="button">Add Items</button></a></br>
 <a href="remove.php"><button type="button">Remove Items</button></a></br>
-<a href="index.php"><button type="button">Log Out</button></a><br></br>
+<a href="logout.php"><button type="button">Log Out</button></a><br></br>
 
 </body>
 </html>

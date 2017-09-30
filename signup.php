@@ -17,8 +17,8 @@ $action = new action();
 
 <form name = "account" method = "post" action = "signup.php" onsubmit = "return check()">
     Username: <input type = "text" name = "username" required><br>
-    Password: <input type = "text" name = "password1" required><br>
-    Re-enter Password: <input type = "text" name = "password2" required><br>
+    Password: <input type = "password" name = "password1" required><br>
+    Re-enter Password: <input type = "password" name = "password2" required><br>
     <input type = "submit" value="Enter">
 </form>
 

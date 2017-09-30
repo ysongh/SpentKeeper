@@ -121,8 +121,12 @@ class action
         }
     }
     
+    function close(){
+        global $conn;
+        mysqli_close($conn);
+    }
+    
 //edit();
 }
-//mysqli_close($conn);
 
 ?> 
