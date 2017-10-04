@@ -126,6 +126,14 @@ class action
         mysqli_close($conn);
     }
     
+    function total($currentUser){
+        global $conn;
+        $query = "SELECT SUM(price) AS value_sum FROM purchases WHERE username = '$currentUser'";
+        $result = $conn->query($query);
+        $row = $result->fetch_array(MYSQLI_NUM); 
+        echo "Total: $" . $row[0] . "<br />";
+    }
+    
 //edit();
 }
 
