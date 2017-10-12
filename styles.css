@@ -5,22 +5,31 @@ body{
 h1{
     font-size: 50px;
     color: green;
+    width: 1020px;
+    margin-left: auto; 
+    margin-right: auto;
+    background-color: SlateBlue;
+    padding: 10px;
 }
 form{
     background-color:rgb(255, 165, 50);
     font-size: 30px;
     border-style: groove;
-    margin: 75px;
-    margin-bottom: 30px;
     padding: 20px;
+    width: 1000px;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     border-style: ridge;
     width: 700px;
-    margin-left:auto; 
-    margin-right:auto;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 10px; 
     margin-bottom: 50px; 
 }
 td, th {
@@ -41,4 +50,43 @@ button{
     margin: 3px;
     padding: 5px;
     background-color: yellow;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: DodgerBlue;
+    width: 1040px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color: #111;
+}
+
+#right{
+    float: right;
+}
+
+#red{
+    background-color: red;
+}
+
+#log{
+    float: right;
+    padding: 22px;
+    font-size: 18px;
 }

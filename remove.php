@@ -14,9 +14,17 @@ $currentUser = $_SESSION['username'];
 <body>
     <h1>Remove Item</h1>
     
+    <div class = "nav">
+        <ul>
+            <li><a href="./home.php"><button type="button">Home</button></a></li>
+            <li><a href="./add.php"><button type="button">Add Items</button></a><li>
+            <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
+        </ul>
+    </div>
+    
     <form method = "post" action = "remove.php">
-    Enter the name of the item to remove<br>
-        <input type = "text" name = "itemName" required><br>
+    Enter the id of the item to remove<br>
+        <input type = "text" name = "itemID" required><br>
         <input type = "submit" value = "Remove">
     </form>
     <br></br>
@@ -26,20 +34,17 @@ $currentUser = $_SESSION['username'];
     $action->isUser($currentUser);
     $action->show($currentUser);
     
-    if (isset($_POST['itemName'])) 
+    if (isset($_POST['itemID'])) 
     {
-        $itemName = $_POST['itemName'];
-        $action->delete($itemName, $currentUser);
+        $itemID = $_POST['itemID'];
+        $action->delete($itemID, $currentUser);
         echo "Success</br>";
     }
     else 
     {
-        $itemName = "(Not Found)";
+        $itemID = "(Not Found)";
     }
     ?>
-    
-    <a href="./home.php"><button type="button">Home</button></a></br>
-    <a href="./add.php"><button type="button">Add Items</button></a><br></br>
 </body>
 
 </html>

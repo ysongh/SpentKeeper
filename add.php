@@ -14,6 +14,14 @@ $currentUser = $_SESSION['username'];
     
     <h1>Adding Items</h1>
     
+    <div class = "nav">
+        <ul>
+            <li><a href="./home.php"><button type="button">Home</button></a></li>
+            <li><a href="./remove.php"><button type="button">Remove Items</button></a><li>
+            <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
+        </ul>
+    </div>
+    
     <form method = "post" action = "add.php">
         Item Name: <input type = "text" name = "itemName" required>
         Price: <input type = "text" name = "price" required><br>
@@ -38,9 +46,6 @@ $currentUser = $_SESSION['username'];
         $item = "(Not Found)";
     }
     ?>
-    
-    <a href="./home.php"><button type="button">Home</button></a></br>
-    <a href="./remove.php"><button type="button">Remove Items</button></a><br></br>
     
     </body>
 

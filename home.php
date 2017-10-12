@@ -14,41 +14,37 @@ $currentUser = $_SESSION['username'];
 
     <h1>Weclome to your Item List</h1>
     
+    <div class = "nav">
+        <ul>
+            <li><a href="./add.php"><button type="button">Add Items</button></a></li>
+            <li><a href="./remove.php"><button type="button">Remove Items</button></a></li>
+            <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
+            <li id = "log">Log in as: <?php echo $currentUser ?></li>
+        </ul>
+    </div>
+    
     <form method = "post" action = "home.php">
         Enter the Date: <input type = "text" name = "date" required>
         <input type = "submit" value="Enter">
     </form>
     <br></br>
-    
-    <div>
-        <?php
-        $action = new action();
-        $action->isUser($currentUser);
-        $action->show($currentUser);
-        
-        if (isset($_POST['date'])) 
-        {
-            $date = $_POST['date'];
-            $action->search($date);
-        }
-        else 
-        {
-            $item = "(Not Found)";
-        }
-        
-        echo "Log in as : " . $currentUser . "<br></br>";
-        ?>
-    </div>
-    
-    
-    
-    <a href="./add.php"><button type="button">Add Items</button></a></br>
-    <a href="./remove.php"><button type="button">Remove Items</button></a></br>
-    <a href="./logout.php"><button type="button">Log Out</button></a><br></br>
-    
-    
+
     <?php
-        $action->total($currentUser);
+    $action = new action();
+    $action->isUser($currentUser);
+    $action->show($currentUser);
+    
+    if (isset($_POST['date'])) 
+    {
+        $date = $_POST['date'];
+        $action->search($date);
+    }
+    else 
+    {
+        $item = "(Not Found)";
+    }
+    
+    $action->total($currentUser);
     ?>
     
 </body>

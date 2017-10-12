@@ -15,7 +15,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 class action
 {
-    // Display table
     function show($currentUser)
     {
         global $conn;
@@ -35,14 +34,14 @@ class action
             for ($k = 0; $k < 4; ++$k) 
             {   
                 echo "<td>$row[$k]</td>";
+               
             }
+            echo "</tr>";
             
-            echo "<tr>";
-        
         }
         
     }
-    
+   
     function add($itemName, $price, $currentUser)
     {
         global $conn;
@@ -57,10 +56,10 @@ class action
         $result = $conn->query($query);
     }
     
-    function delete($itemName, $currentUser)
+    function delete($itemID, $currentUser)
     {
         global $conn;
-        $query = "DELETE FROM purchases WHERE name = '$itemName' AND username = '$currentUser'";
+        $query = "DELETE FROM purchases WHERE id = '$itemID' AND username = '$currentUser'";
         $result = $conn->query($query);
     }
     
@@ -131,7 +130,7 @@ class action
         $query = "SELECT SUM(price) AS value_sum FROM purchases WHERE username = '$currentUser'";
         $result = $conn->query($query);
         $row = $result->fetch_array(MYSQLI_NUM); 
-        echo "Total: $" . $row[0] . "<br />";
+        echo "Total: $" . number_format($row[0] ,2) . "<br />";
     }
     
 //edit();
