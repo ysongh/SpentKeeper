@@ -6,7 +6,16 @@ function check() {
         return false;
     }
     else if (password1 != password2){
-        document.getElementById("error").innerHTML = "Passwords not matched";
+        document.getElementById("error").innerHTML = "Passwords not matched.";
+        return false;
+    }
+    
+}
+
+function isNumber(){
+    var price = document.forms["add"]["price"].value;
+    if (isNaN(price)){
+        document.getElementById("error").innerHTML = "Price must be a number.";
         return false;
     }
 }

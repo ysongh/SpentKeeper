@@ -12,22 +12,24 @@ $currentUser = $_SESSION['username'];
 </head>
 <body>
     
-    <h1>Adding Items</h1>
+    <h1>Adding Purchase</h1>
     
     <div class = "nav">
         <ul>
             <li><a href="./home.php"><button type="button">Home</button></a></li>
-            <li><a href="./remove.php"><button type="button">Remove Items</button></a><li>
+            <li><a href="./remove.php"><button type="button">Remove Purchase</button></a><li>
             <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
+            <li id = "log">Log in as: <?php echo $currentUser ?></li>
         </ul>
     </div>
     
-    <form method = "post" action = "add.php">
-        Item Name: <input type = "text" name = "itemName" required>
+    <form name = "add" method = "post" action = "add.php" onsubmit = "return isNumber()">
+        Purchase Name: <input type = "text" name = "itemName" required>
         Price: <input type = "text" name = "price" required><br>
         <input type = "submit" value = "Add">
     </form>
-    <br></br>
+    
+    <p id = "error"></p>
     
     <?php
     $action = new action();
@@ -46,7 +48,7 @@ $currentUser = $_SESSION['username'];
         $item = "(Not Found)";
     }
     ?>
-    
-    </body>
+    <script src = "validation.js"></script>
+</body>
 
 </html>

@@ -12,12 +12,12 @@ $currentUser = $_SESSION['username'];
 </head>
 <body>
 
-    <h1>Weclome to your Item List</h1>
+    <h1>Weclome to your Purchase List</h1>
     
     <div class = "nav">
         <ul>
-            <li><a href="./add.php"><button type="button">Add Items</button></a></li>
-            <li><a href="./remove.php"><button type="button">Remove Items</button></a></li>
+            <li><a href="./add.php"><button type="button">Add Purchase</button></a></li>
+            <li><a href="./remove.php"><button type="button">Remove Purchase</button></a></li>
             <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
             <li id = "log">Log in as: <?php echo $currentUser ?></li>
         </ul>
@@ -43,9 +43,14 @@ $currentUser = $_SESSION['username'];
     {
         $item = "(Not Found)";
     }
-    
-    $action->total($currentUser);
     ?>
+    
+    <tfoot>
+        <tr>
+            <td colspan='2'>Total</td>
+            <td colspan='2'><?php $action->total($currentUser); ?></td>
+        </tr>
+    </tfoot>
     
 </body>
 </html>

@@ -23,7 +23,7 @@ class action
         
         $rows = $result ->num_rows;
         
-        echo "<table><tr> <th>Item ID</th> <th>Item Name</th>  <th>Price</th> <th>Date</th>";
+        echo "<table><tr> <th>Purchase ID</th> <th>Purchase Name</th>  <th>Price</th> <th>Date</th>";
         
         for ($j = 0; $j < $rows; ++$j)
         {
@@ -39,7 +39,6 @@ class action
             echo "</tr>";
             
         }
-        
     }
    
     function add($itemName, $price, $currentUser)
@@ -130,7 +129,7 @@ class action
         $query = "SELECT SUM(price) AS value_sum FROM purchases WHERE username = '$currentUser'";
         $result = $conn->query($query);
         $row = $result->fetch_array(MYSQLI_NUM); 
-        echo "Total: $" . number_format($row[0] ,2) . "<br />";
+        echo "$" . number_format($row[0] ,2) . "<br />";
     }
     
 //edit();

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 

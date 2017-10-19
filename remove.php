@@ -12,18 +12,19 @@ $currentUser = $_SESSION['username'];
 </head>
 
 <body>
-    <h1>Remove Item</h1>
+    <h1>Remove Purchase</h1>
     
     <div class = "nav">
         <ul>
             <li><a href="./home.php"><button type="button">Home</button></a></li>
-            <li><a href="./add.php"><button type="button">Add Items</button></a><li>
+            <li><a href="./add.php"><button type="button">Add Purchase</button></a><li>
             <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
+            <li id = "log">Log in as: <?php echo $currentUser ?></li>
         </ul>
     </div>
     
     <form method = "post" action = "remove.php">
-    Enter the id of the item to remove<br>
+    Enter the id of the purchase to remove<br>
         <input type = "text" name = "itemID" required><br>
         <input type = "submit" value = "Remove">
     </form>
