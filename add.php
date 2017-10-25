@@ -7,7 +7,7 @@ $currentUser = $_SESSION['username'];
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Item</title>
+    <title>Add Purchase</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -18,13 +18,14 @@ $currentUser = $_SESSION['username'];
         <ul>
             <li><a href="./home.php"><button type="button">Home</button></a></li>
             <li><a href="./remove.php"><button type="button">Remove Purchase</button></a><li>
+            <li><a href="./summary.php"><button type="button">Summary</button></a></li>
             <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
             <li id = "log">Log in as: <?php echo $currentUser ?></li>
         </ul>
     </div>
     
     <form name = "add" method = "post" action = "add.php" onsubmit = "return isNumber()">
-        Purchase Name: <input type = "text" name = "itemName" required>
+        Purchase Name: <input type = "text" name = "itemName" maxlength="20" required>
         Price: <input type = "text" name = "price" required><br>
         <input type = "submit" value = "Add">
     </form>

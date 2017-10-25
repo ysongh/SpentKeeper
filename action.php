@@ -62,15 +62,16 @@ class action
         $result = $conn->query($query);
     }
     
-    function search($date)
+    function search($date, $currentUser)
     {
         global $conn;
-        $query = "SELECT * FROM purchases WHERE Date LIKE '$date%'";
+        $total = 0;
+        $query = "SELECT * FROM purchases WHERE Date LIKE '$date%' AND username = '$currentUser'";
         $result = $conn->query($query);
         
         $rows = $result ->num_rows;
         
-        echo "<table><tr> <th>Item ID</th> <th>Item Name</th>  <th>Price</th> <th>Date</th>";
+        echo "<table><tr> <th>Purchase ID</th> <th>Purchase Name</th>  <th>Price</th> <th>Date</th>";
         
         for ($j = 0; $j < $rows; ++$j)
         {
@@ -80,11 +81,20 @@ class action
             echo "<tr>";
             for ($k = 0; $k < 4; ++$k) 
             {   
+                if ($k == 2){
+                    $total += $row[$k];
+                }
                 echo "<td>$row[$k]</td>";
             }
             
             echo "<tr>";
         }
+        echo "<tfoot>
+        <tr>
+            <td colspan='2'>Total</td>
+            <td colspan='2'>$$total</td>
+        </tr>
+        </tfoot>";
     }
     
     function login($username, $password)

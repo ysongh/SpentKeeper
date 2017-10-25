@@ -7,7 +7,7 @@ $currentUser = $_SESSION['username'];
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Remove Item</title>
+    <title>Remove Purchase</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -18,6 +18,7 @@ $currentUser = $_SESSION['username'];
         <ul>
             <li><a href="./home.php"><button type="button">Home</button></a></li>
             <li><a href="./add.php"><button type="button">Add Purchase</button></a><li>
+            <li><a href="./summary.php"><button type="button">Summary</button></a></li>
             <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
             <li id = "log">Log in as: <?php echo $currentUser ?></li>
         </ul>
