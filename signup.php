@@ -18,6 +18,7 @@ $action = new action();
         Username: <input type = "text" name = "username" required><br>
         Password: <input type = "password" name = "password1" required><br>
         Re-enter Password: <input type = "password" name = "password2" required><br>
+        Email: <input type = "text" name = "email" required><br>
         <input type = "submit" value="Enter">
     </form>
     
@@ -26,17 +27,15 @@ $action = new action();
     <?php
     if (isset($_POST['username']) &&
         isset($_POST['password1']) &&
-        isset($_POST['password2'])) 
+        isset($_POST['password2']) &&
+        isset($_POST['email'])) 
     {
         $username = $_POST['username'];
         $password1 = $_POST['password1'];
         $password2 = $_POST['password2'];
+        $email = $_POST['email'];
         $_SESSION["username"] = $username;
-        $action->signup($username, $password1);
-    }
-    else 
-    {
-        $item = "(Not Found)";
+        $action->signup($username, $password1, $email);
     }
     ?>
     

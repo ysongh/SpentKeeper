@@ -13,9 +13,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 	 die("Connection failed: " . mysqli_connect_error());
 }
 
+$user = array();
+
 class action
 {
-    function show($currentUser)
+    function load($currentUser)
     {
         global $conn;
         $query = "SELECT id, name, price, date FROM purchases WHERE username = '$currentUser'";
@@ -23,35 +25,24 @@ class action
         
         $rows = $result ->num_rows;
         
-        echo "<table><tr> <th>Purchase ID</th> <th>Purchase Name</th>  <th>Price</th> <th>Date</th>";
-        
         for ($j = 0; $j < $rows; ++$j)
         {
             $result->data_seek($j);
             $row =$result->fetch_array(MYSQLI_NUM);
             
-            echo "<tr>";
             for ($k = 0; $k < 4; ++$k) 
             {   
-                echo "<td>$row[$k]</td>";
-               
+                $user[$j][$k] = "$row[$k]";
             }
-            echo "</tr>";
             
         }
+        return $user;
     }
    
     function add($itemName, $price, $currentUser)
     {
         global $conn;
         $query = "INSERT INTO purchases (name, price, date, username) VALUES('$itemName', '$price', now(), '$currentUser')";
-        $result = $conn->query($query);
-    }
-    
-    function edit()
-    {
-        global $conn;
-        $query = "UPDATE Items SET Date = '08/25/2017' WHERE Item_Name = 'Pencil'";
         $result = $conn->query($query);
     }
     
@@ -113,11 +104,10 @@ class action
         }
     }
     
-    function signup($username, $password)
+    function signup($username, $password, $email)
     {
         global $conn;
-        $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-        echo $username . $password;
+        $query = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
         $result = $conn->query($query);
         header("Location: home.php");
     }
@@ -141,8 +131,7 @@ class action
         $row = $result->fetch_array(MYSQLI_NUM); 
         echo "$" . number_format($row[0] ,2) . "<br />";
     }
-    
-//edit();
+
 }
 
 ?> 

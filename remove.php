@@ -34,7 +34,7 @@ $currentUser = $_SESSION['username'];
     <?php
     $action = new action();
     $action->isUser($currentUser);
-    $action->show($currentUser);
+    $user = $action->load($currentUser);
     
     if (isset($_POST['itemID'])) 
     {
@@ -42,11 +42,29 @@ $currentUser = $_SESSION['username'];
         $action->delete($itemID, $currentUser);
         echo "Success</br>";
     }
-    else 
-    {
-        $itemID = "(Not Found)";
-    }
     ?>
+    <table>
+        <thead>
+            <tr> 
+                <th>Purchase ID</th>
+                <th>Purchase Name</th>
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                foreach ($user as $key => $col) {
+                    echo "<tr>";
+                    foreach ($col as $row) {
+                        echo "<td>$row</td>";
+                    }
+                    echo "</tr>";
+                }
+            ?>
+        </tbody>
+    </table>
+    
 </body>
 
 </html>

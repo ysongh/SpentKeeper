@@ -39,10 +39,6 @@ $currentUser = $_SESSION['username'];
         $date = $_POST['date'];
         $action->search($date, $currentUser);
     }
-    else 
-    {
-        $item = "(Not Found)";
-    }
     ?>
     
 </body>

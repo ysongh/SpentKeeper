@@ -44,10 +44,6 @@ $currentUser = $_SESSION['username'];
         $action->add($itemName, $price, $currentUser);
         echo "Success</br>";
     }
-    else 
-    {
-        $item = "(Not Found)";
-    }
     ?>
     <script src = "validation.js"></script>
 </body>

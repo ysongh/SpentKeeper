@@ -29,25 +29,41 @@ $currentUser = $_SESSION['username'];
     <?php
     $action = new action();
     $action->isUser($currentUser);
-    $action->show($currentUser);
+    $user = $action->load($currentUser);
     
     if (isset($_POST['date'])) 
     {
         $date = $_POST['date'];
         $action->search($date);
     }
-    else 
-    {
-        $item = "(Not Found)";
-    }
     ?>
-    
-    <tfoot>
-        <tr>
-            <td colspan='2'>Total</td>
-            <td colspan='2'><?php $action->total($currentUser); ?></td>
-        </tr>
-    </tfoot>
+    <table>
+        <thead>
+            <tr> 
+                <th>Purchase ID</th>
+                <th>Purchase Name</th>
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                foreach ($user as $key => $col) {
+                    echo "<tr>";
+                    foreach ($col as $row) {
+                        echo "<td>$row</td>";
+                    }
+                    echo "</tr>";
+                }
+            ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan='2'>Total</td>
+                <td colspan='2'><?php $action->total($currentUser); ?></td>
+            </tr>
+        </tfoot>
+    </table>
     
 </body>
 </html>
