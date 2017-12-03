@@ -19,6 +19,7 @@ $currentUser = $_SESSION['username'];
             <li><a href="./home.php"><button type="button">Home</button></a></li>
             <li><a href="./add.php"><button type="button">Add Purchase</button></a><li>
             <li><a href="./summary.php"><button type="button">Summary</button></a></li>
+            <li><a href="./setting.php"><button type="button">Setting</button></a></li>
             <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
             <li id = "log">Log in as: <?php echo $currentUser ?></li>
         </ul>
@@ -34,7 +35,7 @@ $currentUser = $_SESSION['username'];
     <?php
     $action = new action();
     $action->isUser($currentUser);
-    $user = $action->load($currentUser);
+    $userItem = $action->load($currentUser);
     
     if (isset($_POST['itemID'])) 
     {
@@ -54,7 +55,7 @@ $currentUser = $_SESSION['username'];
         </thead>
         <tbody>
             <?php
-                foreach ($user as $key => $col) {
+                foreach ($userItem as $key => $col) {
                     echo "<tr>";
                     foreach ($col as $row) {
                         echo "<td>$row</td>";

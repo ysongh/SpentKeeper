@@ -1,12 +1,12 @@
 body{
     text-align: center;
-    width: 1000px;
+    width: 1200px;
     margin: 0 auto; 
 }
 h1{
     font-size: 50px;
     color: green;
-    width: 1020px;
+    width: 1200px;
     background-color:rgb(255, 165, 50);
     padding: 10px;
     border: 2px solid red;
@@ -17,7 +17,7 @@ form{
     font-size: 30px;
     border-style: groove;
     padding: 20px;
-    width: 1000px;
+    width: 1175px;
     margin-bottom: 30px;
     margin-top: 30px;
     word-spacing: 0.3em;
@@ -38,9 +38,6 @@ td, th {
     padding: 15px;
    
 }
-p{
-    color: red;
-}
 img{
     width: 200px;
     height: 200px;
@@ -57,7 +54,7 @@ button{
     padding: 0;
     overflow: hidden;
     background-color:rgb(255, 165, 150);
-    width: 1040px;
+    width: 1220px;
 }
 
 .nav li {
@@ -75,6 +72,10 @@ button{
     background-color: #111;
 }
 
+#userInfo{
+    font-size: 25px;
+}
+
 #right{
     float: right;
 }
@@ -87,4 +88,7 @@ button{
     float: right;
     padding: 22px;
     font-size: 18px;
+}
+#error{
+    color: red;
 }

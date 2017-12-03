@@ -13,7 +13,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 	 die("Connection failed: " . mysqli_connect_error());
 }
 
-$user = array();
+$userItem = array();
+$userInfo = array();
 
 class action
 {
@@ -32,11 +33,11 @@ class action
             
             for ($k = 0; $k < 4; ++$k) 
             {   
-                $user[$j][$k] = "$row[$k]";
+                $userItem[$j][$k] = "$row[$k]";
             }
             
         }
-        return $user;
+        return $userItem;
     }
    
     function add($itemName, $price, $currentUser)
@@ -74,8 +75,11 @@ class action
             {   
                 if ($k == 2){
                     $total += $row[$k];
+                    echo "<td>$ $row[$k]</td>";
                 }
-                echo "<td>$row[$k]</td>";
+                else{
+                    echo "<td>$row[$k]</td>";
+                }
             }
             
             echo "<tr>";
@@ -130,6 +134,23 @@ class action
         $result = $conn->query($query);
         $row = $result->fetch_array(MYSQLI_NUM); 
         echo "$" . number_format($row[0] ,2) . "<br />";
+    }
+    
+    function loadUser($currentUser){
+        global $conn;
+        $query = "SELECT * FROM users WHERE username = '$currentUser'";
+        $result = $conn->query($query);
+        
+        $rows = $result ->num_rows;
+        
+        $result->data_seek(0);
+        $row = $result->fetch_array(MYSQLI_NUM);
+        
+        for ($j = 0; $j < 4; ++$j)
+        {
+            $userInfo[$j] = $row[$j];
+        }
+        return $userInfo;
     }
 
 }

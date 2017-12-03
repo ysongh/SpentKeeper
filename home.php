@@ -7,7 +7,7 @@ $currentUser = $_SESSION['username'];
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Weclome</title>
+    <title>Welcome</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -19,17 +19,19 @@ $currentUser = $_SESSION['username'];
             <li><a href="./add.php"><button type="button">Add Purchase</button></a></li>
             <li><a href="./remove.php"><button type="button">Remove Purchase</button></a></li>
             <li><a href="./summary.php"><button type="button">Summary</button></a></li>
+            <li><a href="./setting.php"><button type="button">Setting</button></a></li>
             <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
             <li id = "log">Log in as: <?php echo $currentUser ?></li>
         </ul>
     </div>
+    
     
     <br />
 
     <?php
     $action = new action();
     $action->isUser($currentUser);
-    $user = $action->load($currentUser);
+    $userItem = $action->load($currentUser);
     
     if (isset($_POST['date'])) 
     {
@@ -37,6 +39,7 @@ $currentUser = $_SESSION['username'];
         $action->search($date);
     }
     ?>
+    
     <table>
         <thead>
             <tr> 
@@ -48,7 +51,7 @@ $currentUser = $_SESSION['username'];
         </thead>
         <tbody>
             <?php
-                foreach ($user as $key => $col) {
+                foreach ($userItem as $key => $col) {
                     echo "<tr>";
                     foreach ($col as $row) {
                         echo "<td>$row</td>";
