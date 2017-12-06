@@ -20,7 +20,7 @@ form{
     width: 1175px;
     margin-bottom: 30px;
     margin-top: 30px;
-    word-spacing: 0.3em;
+    word-spacing: 0.1em;
 }
 table {
     font-family: arial, sans-serif;
@@ -47,6 +47,9 @@ button{
     margin: 3px;
     padding: 5px;
     background-color: yellow;
+}
+select{
+    font-size: 19px;
 }
 
 .nav ul {

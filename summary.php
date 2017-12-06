@@ -27,8 +27,22 @@ $currentUser = $_SESSION['username'];
     
     <form method = "post" action = "summary.php">
         Enter the Year: <input type = "text" name = "year" required><br>
-        Enter the Month: <input type = "text" name = "month"><br>
-        <input type = "submit" value="Enter">
+        Select the Month: 
+        <select name="month">
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select><br>
+        <input type = "submit" value="Search">
     </form>
     <br></br>
 
