@@ -26,7 +26,8 @@ $currentUser = $_SESSION['username'];
     </div>
     
     <form method = "post" action = "summary.php">
-        Enter the Date: <input type = "text" name = "date" required>
+        Enter the Year: <input type = "text" name = "year" required><br>
+        Enter the Month: <input type = "text" name = "month"><br>
         <input type = "submit" value="Enter">
     </form>
     <br></br>
@@ -35,9 +36,12 @@ $currentUser = $_SESSION['username'];
     $action = new action();
     $action->isUser($currentUser);
     
-    if (isset($_POST['date'])) 
+    if (isset($_POST['year']) &&
+        isset($_POST['month'])) 
     {
-        $date = $_POST['date'];
+        $year = $_POST['year'];
+        $month = $_POST['month'];
+        $date = $year . "-" . $month;
         $action->search($date, $currentUser);
     }
     ?>

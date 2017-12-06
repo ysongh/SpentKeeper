@@ -35,6 +35,5 @@ $currentUser = $_SESSION['username'];
     <p id = "userInfo">Username : <?php echo $userInfo[1] ?></p>
     <p id = "userInfo">Email : <?php echo $userInfo[3] ?></p>
     
-    
 </body>
 </html>

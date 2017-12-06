@@ -9,7 +9,6 @@ function check() {
         document.getElementById("error").innerHTML = "Passwords not matched.";
         return false;
     }
-    
 }
 
 function isNumber(){
