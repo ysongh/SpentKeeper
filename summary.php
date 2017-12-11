@@ -19,6 +19,7 @@ $currentUser = $_SESSION['username'];
             <li><a href="./home.php"><button type="button">Home</button></a></li>
             <li><a href="./add.php"><button type="button">Add Purchase</button></a></li>
             <li><a href="./remove.php"><button type="button">Remove Purchase</button></a></li>
+            <li><a href="./summary.php"><button type="button">Summary</button></a></li>
             <li><a href="./setting.php"><button type="button">Setting</button></a></li>
             <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
             <li id = "log">Log in as: <?php echo $currentUser ?></li>
@@ -26,8 +27,9 @@ $currentUser = $_SESSION['username'];
     </div>
     
     <form method = "post" action = "summary.php">
-        Enter the Year: <input type = "text" name = "year" required><br>
-        Select the Month: 
+        <label for="year">Enter the Year:</label>
+        <input type = "text" name = "year" maxlength="4" required><br>
+        <label for="month">Select the Month:</label>
         <select name="month">
             <option value="01">January</option>
             <option value="02">February</option>

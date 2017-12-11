@@ -20,6 +20,7 @@ $currentUser = $_SESSION['username'];
             <li><a href="./add.php"><button type="button">Add Purchase</button></a></li>
             <li><a href="./remove.php"><button type="button">Remove Purchase</button></a></li>
             <li><a href="./summary.php"><button type="button">Summary</button></a></li>
+            <li><a href="./setting.php"><button type="button">Setting</button></a></li>
             <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
             <li id = "log">Log in as: <?php echo $currentUser ?></li>
         </ul>

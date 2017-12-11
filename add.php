@@ -17,6 +17,7 @@ $currentUser = $_SESSION['username'];
     <div class = "nav">
         <ul>
             <li><a href="./home.php"><button type="button">Home</button></a></li>
+            <li><a href="./add.php"><button type="button">Add Purchase</button></a><li>
             <li><a href="./remove.php"><button type="button">Remove Purchase</button></a><li>
             <li><a href="./summary.php"><button type="button">Summary</button></a></li>
             <li><a href="./setting.php"><button type="button">Setting</button></a></li>
@@ -26,8 +27,10 @@ $currentUser = $_SESSION['username'];
     </div>
     
     <form name = "add" method = "post" action = "add.php" onsubmit = "return isNumber()">
-        Purchase Name: <input type = "text" name = "itemName" maxlength="20" required>
-        Price: <input type = "text" name = "price" required><br>
+        <label for="purchaseName">Purchase Name:</label>
+        <input type = "text" name = "itemName" maxlength="20" required>
+        <label for="price">Price:</label>
+        <input type = "text" name = "price" required><br>
         <input type = "submit" value = "Add">
     </form>
     

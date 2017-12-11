@@ -18,6 +18,7 @@ $action->close();
 
 <body>
     <h1>You have log out</h1>
+    <img src = "/images/exit.jpeg" >
     
     <br></br>
     <a href="./index.php"><button type="button">Home</button></a><br>

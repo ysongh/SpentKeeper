@@ -1,12 +1,12 @@
 body{
     text-align: center;
-    width: 1200px;
+    width: 1300px;
     margin: 0 auto; 
 }
 h1{
     font-size: 50px;
     color: green;
-    width: 1200px;
+    width: 1300px;
     background-color:rgb(255, 165, 50);
     padding: 10px;
     border: 2px solid red;
@@ -17,7 +17,7 @@ form{
     font-size: 30px;
     border-style: groove;
     padding: 20px;
-    width: 1175px;
+    width: 1275px;
     margin-bottom: 30px;
     margin-top: 30px;
     word-spacing: 0.1em;
@@ -57,7 +57,7 @@ select{
     padding: 0;
     overflow: hidden;
     background-color:rgb(255, 165, 150);
-    width: 1220px;
+    width: 1320px;
 }
 
 .nav li {

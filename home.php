@@ -16,6 +16,7 @@ $currentUser = $_SESSION['username'];
     
     <div class = "nav">
         <ul>
+            <li><a href="./home.php"><button type="button">Home</button></a></li>
             <li><a href="./add.php"><button type="button">Add Purchase</button></a></li>
             <li><a href="./remove.php"><button type="button">Remove Purchase</button></a></li>
             <li><a href="./summary.php"><button type="button">Summary</button></a></li>
