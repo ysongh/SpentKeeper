@@ -1,4 +1,4 @@
-<?php include("action.php"); 
+<?php include("db.php"); 
 
 session_start();
 

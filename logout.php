@@ -1,5 +1,5 @@
 <?php
-include("action.php");
+include("db.php");
 
 session_start();
 session_unset();
