@@ -15,10 +15,14 @@ $action = new action();
     <h1>Sign Up</h1>
     
     <form name = "account" method = "post" action = "signup.php" onsubmit = "return check()">
-        Username: <input type = "text" name = "username" required><br>
-        Password: <input type = "password" name = "password1" required><br>
-        Re-enter Password: <input type = "password" name = "password2" required><br>
-        Email: <input type = "text" name = "email" required><br>
+        <label for="username">Username: </label>
+        <input type = "text" name = "username" required><br>
+        <label for="password1">Password: </label>
+        <input type = "password" name = "password1" required><br>
+        <label for="password2">Re-enter Password: </label>
+        <input type = "password" name = "password2" required><br>
+        <label for="email">Email: </label>
+        <input type = "text" name = "email" required><br>
         <input type = "submit" value="Enter">
     </form>
     
