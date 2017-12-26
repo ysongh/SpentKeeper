@@ -8,7 +8,6 @@ $currentUser = $_SESSION['username'];
 <html>
 <head>
     <title>Welcome</title>
-
     <link rel="stylesheet" type="text/css" href="custom.css">
 </head>
 <body>
@@ -27,9 +26,9 @@ $currentUser = $_SESSION['username'];
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="./home.php">Home</a></li>
                     <li><a href="./add.php">Add Purchase</a></li>
-                    <li><a href="./remove.php"><button type="button">Remove Purchase</button></a></li>
-                    <li><a href="./summary.php"><button type="button">Summary</button></a></li>
-                    <li><a href="./setting.php"><button type="button">Setting</button></a></li>
+                    <li><a href="./remove.php">Remove Purchase</a></li>
+                    <li><a href="./summary.php">Summary</a></li>
+                    <li><a href="./setting.php">Setting</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li id = "log">Log in as: <?php echo $currentUser ?></li>
@@ -52,7 +51,7 @@ $currentUser = $_SESSION['username'];
         }
         ?>
         
-        <table>
+        <table class="table table-hover">
             <thead>
                 <tr> 
                     <th>Purchase ID</th>

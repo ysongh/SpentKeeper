@@ -48,7 +48,6 @@ $action = new action();
         <a href="./signup.php"><button type="button">Sign Up</button></a>
     </div>
     
-    
     <script src = "validation.js"></script>
 </body>
 

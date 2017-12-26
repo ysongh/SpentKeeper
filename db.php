@@ -63,7 +63,7 @@ class action
         
         $rows = $result ->num_rows;
         
-        echo "<table><tr> <th>Purchase ID</th> <th>Purchase Name</th>  <th>Price</th> <th>Date</th>";
+        echo "<table class='table table-hover'><tr> <th>Purchase ID</th> <th>Purchase Name</th>  <th>Price</th> <th>Date</th>";
         
         for ($j = 0; $j < $rows; ++$j)
         {
