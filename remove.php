@@ -8,7 +8,7 @@ $currentUser = $_SESSION['username'];
 <html>
 <head>
     <title>Remove Purchase</title>
-    <link rel="stylesheet" type="text/css" href="custom.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 
 <body>

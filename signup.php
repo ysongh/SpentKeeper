@@ -9,8 +9,8 @@ $action = new action();
 <html>
 <head>
     <title>SignUp</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="custom.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
     <div class = "container">
@@ -55,7 +55,7 @@ $action = new action();
         <a href="./login.php"><button type="button">Login</a><br></button></br>
     </div>
     
-    <script src = "validation.js"></script>
+    <script src = "js/validation.js"></script>
 </body>
 
 </html>

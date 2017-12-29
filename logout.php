@@ -13,7 +13,7 @@ $action->close();
 <html>
 <head>
     <title>Logout</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@ $action->close();
     <img src = "/images/exit.jpeg" >
     
     <br></br>
-    <a href="./index.php"><button type="button">Home</button></a><br>
+    <a href="./index.html"><button type="button">Home</button></a><br>
 </body>
 
 </html>
