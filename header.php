@@ -24,10 +24,10 @@
                     <li><a href="./setting.php">Setting</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li id = "log">Log in as: <?php echo $currentUser ?></li>
-                    <li id = "right"><a href="./logout.php"><button type="button" id = "red">Log Out</button></a></li>
+					<p class="navbar-text">Log in as: <?php echo $currentUser ?></p>
+					<a href="./logout.php" class="btn btn-default btn-lg" role="button">Log Out</a>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	
+</body>

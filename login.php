@@ -11,14 +11,13 @@ $action = new action();
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 
 <body>
     <div class = "container">
         <h1>Login</h1>
-        <form name = "account" method = "post" action = "login.php">
+        <form name = "account" class="form-horizontal" method = "post" action = "login.php">
             <div class = "form-group">
                 <label for="username">Username: </label>
                 <input type = "text" name = "username" class="form-control" required>

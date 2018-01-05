@@ -3,6 +3,7 @@
 <head>
     <title>Welcome</title>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     <h1>Weclome to your Purchase List</h1>

@@ -3,6 +3,7 @@
 <head>
     <title>Summary</title>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     <h1>Summary of your Purchase</h1>

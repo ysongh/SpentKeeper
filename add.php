@@ -3,6 +3,7 @@
 <head>
     <title>Add Purchase</title>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     <h1>Adding Purchase</h1>

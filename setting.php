@@ -3,6 +3,7 @@
 <head>
     <title>Setting</title>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     <h1>Account Setting</h1>
