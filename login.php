@@ -1,5 +1,5 @@
 <?php 
-include("db.php");
+include("db/db.php");
 
 session_start();
 $_SESSION = array();
@@ -44,7 +44,7 @@ $action = new action();
             $item = "(Not Found)";
         }
         ?>
-        <a href="./signup.php"><button type="button">Sign Up</button></a>
+        <a href="./php/signup.php"><button type="button">Sign Up</button></a>
     </div>
     
     <script src = "js/validation.js"></script>

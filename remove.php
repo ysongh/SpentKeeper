@@ -9,7 +9,7 @@
     <h1>Remove Purchase</h1>
     
     <?php 
-        include("db.php");
+        include("db/db.php");
         session_start();
         $currentUser = $_SESSION['username'];
         include('header.php');
