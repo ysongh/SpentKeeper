@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Header</title>
+    <title>Spent Keeper</title>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
@@ -30,4 +30,3 @@
 			</div>
 		</div>
 	</nav>
-</body>
