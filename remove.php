@@ -1,11 +1,7 @@
 <h1>Remove Purchase</h1>
 
 <?php 
-    include("db/db.php");
     include('template/header.php');
-    include('template/footer.php');
-    session_start();
-    $currentUser = $_SESSION['username'];
 ?>
 
 <div class = "container">
@@ -51,3 +47,5 @@ if (isset($_POST['itemID']))
         </tbody>
     </table>
 </div>
+
+<?php include('template/footer.php'); ?>

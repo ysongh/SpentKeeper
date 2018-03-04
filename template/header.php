@@ -3,8 +3,14 @@
 <head>
     <title>Spent Keeper</title>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
+	<?php 
+		include("db/db.php");
+		session_start();
+		$currentUser = $_SESSION['username'];
+	?>
     <nav class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
@@ -24,8 +30,8 @@
                     <li><a href="./setting.php">Setting</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<p class="navbar-text">Log in as: <?php echo $currentUser ?></p>
-					<a href="./logout.php" class="btn btn-default btn-lg" role="button">Log Out</a>
+					<p class="navbar-text">Log in as: <?php echo $currentUser, ", ",  date('F j, Y'); ?></p>
+					<a href="./logout.php" class="btn btn-default navbar-btn" role="button">Log Out</a>
 				</ul>
 			</div>
 		</div>

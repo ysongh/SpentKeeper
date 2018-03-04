@@ -1,11 +1,7 @@
 <h1>Account Setting</h1>
 
 <?php 
-    include("db/db.php");
     include('template/header.php');
-    include('template/footer.php');
-    session_start();
-    $currentUser = $_SESSION['username'];
 ?>
 
 <div class = "container">
@@ -18,3 +14,5 @@
     <p id = "userInfo">Username : <?php echo $userInfo[1] ?></p>
     <p id = "userInfo">Email : <?php echo $userInfo[3] ?></p>
 </div>
+
+<?php include('template/footer.php'); ?>

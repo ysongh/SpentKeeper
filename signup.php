@@ -1,18 +1,15 @@
-<?php include("db/db.php"); 
-
-session_start();
-
-$action = new action();
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>SignUp</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
+    <?php include("db/db.php"); 
+        session_start();
+        $action = new action();
+    ?>
+
     <div class = "container">
         <h1>Sign Up</h1>
         

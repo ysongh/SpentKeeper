@@ -1,11 +1,7 @@
 <h1>Adding Purchase</h1>
 
 <?php 
-    include("db/db.php");
     include('template/header.php');
-    include('template/footer.php');
-    session_start();
-    $currentUser = $_SESSION['username'];
 ?>
 
 <div class = "container">
@@ -35,3 +31,5 @@
     }
     ?>
 </div>
+
+<?php include('template/footer.php'); ?>

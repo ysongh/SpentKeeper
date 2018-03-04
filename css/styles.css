@@ -1,6 +1,3 @@
-body{
-    font-size: 30px;
-}
 form{
     background-color:rgb(255, 165, 50);
     font-size: 30px;
@@ -38,26 +35,9 @@ select{
     font-size: 19px;
 }
 
-.nav ul {
-    list-style-type: none;
-    padding: 0;
-    overflow: hidden;
-    background-color:rgb(255, 165, 150);
-}
-
-.nav li {
-    float: left;
-}
-
-.nav li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.nav li a:hover {
-    background-color: #111;
+footer {
+      background-color: #f2f2f2;
+      padding: 25px;
 }
 
 #userInfo{
